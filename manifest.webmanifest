@@ -1,0 +1,18 @@
+{
+  "name": "DSA C Programs",
+  "short_name": "DSA Programs",
+  "description": "29 standalone DSA C programs for offline lab practice",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f5f4ee",
+  "theme_color": "#203b32",
+  "icons": [
+    {
+      "src": "./offline-icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}
