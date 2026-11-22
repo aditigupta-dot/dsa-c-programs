@@ -48,6 +48,7 @@
 <script src="offline-sources-1.js"></script>
 <script src="offline-sources-2.js"></script>
 <script>
+const SOURCES=Object.assign({},window.OFFLINE_SOURCES_PART1||{},window.OFFLINE_SOURCES_PART2||{});
 const search=document.getElementById('search'),categoryView=document.getElementById('categoryView'),programView=document.getElementById('programView'),cards=[...document.querySelectorAll('.card')],count=document.getElementById('count'),viewer=document.getElementById('viewer'),source=document.getElementById('source'),filename=document.getElementById('filename');
 let activeGroup=null;
 function showGroup(group){activeGroup=group;categoryView.hidden=true;programView.hidden=false;document.getElementById('groupTitle').textContent={"sorting":"Sorting","searching":"Searching","series":"Series","recursion":"Recursion","greedy-dp":"Greedy & Dynamic Programming","graphs":"Graphs","backtracking":"Backtracking"}[group];filterCards();search.value='';count.textContent=cards.filter(c=>c.dataset.group===group).length+' programs';}
@@ -55,7 +56,7 @@ function filterCards(){let shown=0;const q=search.value.toLowerCase();cards.forE
 document.querySelectorAll('[data-category]').forEach(b=>b.addEventListener('click',()=>showGroup(b.dataset.category)));
 document.getElementById('back').addEventListener('click',()=>{activeGroup=null;programView.hidden=true;categoryView.hidden=false;search.value='';count.textContent='29 programs'});
 search.addEventListener('input',()=>{const q=search.value.toLowerCase();if(!activeGroup){const matched=cards.filter(c=>c.dataset.search.includes(q));count.textContent=matched.length+' matching programs';document.querySelectorAll('[data-category]').forEach(b=>{b.hidden=q&&!cards.some(c=>c.dataset.group===b.dataset.category&&c.dataset.search.includes(q))});}else filterCards();});
-document.querySelectorAll('[data-file]').forEach(b=>b.addEventListener('click',async()=>{const path=b.dataset.file;viewer.style.display='block';filename.textContent=path;source.textContent='Loading…';viewer.scrollIntoView({behavior:'smooth'});try{const r=await fetch('programs/'+path);if(!r.ok)throw Error();source.textContent=await r.text()}catch(e){source.textContent='Unable to load source. Open this file in the GitHub repository: programs/'+path}}));
+document.querySelectorAll('[data-file]').forEach(b=>b.addEventListener('click',()=>{const path=b.dataset.file;viewer.style.display='block';filename.textContent=path;source.textContent=SOURCES[path]||'Source code is missing from the offline bundle.';viewer.scrollIntoView({behavior:'smooth'});}));
 document.getElementById('copy').addEventListener('click',async()=>{try{await navigator.clipboard.writeText(source.textContent);document.getElementById('copy').textContent='Copied!';setTimeout(()=>document.getElementById('copy').textContent='Copy code',1400)}catch(e){document.getElementById('copy').textContent='Select code to copy'}});
 document.getElementById('close').addEventListener('click',()=>viewer.style.display='none');
 </script></body></html>
