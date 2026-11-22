@@ -248,9 +248,6 @@ int main(void) {
         int source;
         printf("Enter source vertex: ");
         if (scanf("%d", &source) != 1 || source < 0 || source >= n) return 1;
-        for (int i = 0; i < n; i++)
-            for (int j = 0; j < n; j++)
-                if (graph[i][j] == 0 && i != j) graph[i][j] = INF;
         dijkstra(graph, n, source);
     } else if (choice == 4) {
         int source;
