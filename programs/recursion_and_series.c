@@ -78,14 +78,17 @@ void hanoiIterative(int n) {
     Peg destination = {.top = -1, .name = 'D'};
     for (int i = n; i >= 1; i--) push(&source, i);
 
-    Peg *aux = &auxiliary, *dest = &destination;
-    if (n % 2 == 0) { Peg *temp = aux; aux = dest; dest = temp; }
-
     unsigned long long moves = (1ULL << n) - 1;
     for (unsigned long long i = 1; i <= moves; i++) {
-        if (i % 3 == 1) legalMove(&source, dest);
-        else if (i % 3 == 2) legalMove(&source, aux);
-        else legalMove(aux, dest);
+        if (n % 2 == 0) {
+            if (i % 3 == 1) legalMove(&source, &auxiliary);
+            else if (i % 3 == 2) legalMove(&source, &destination);
+            else legalMove(&auxiliary, &destination);
+        } else {
+            if (i % 3 == 1) legalMove(&source, &destination);
+            else if (i % 3 == 2) legalMove(&source, &auxiliary);
+            else legalMove(&auxiliary, &destination);
+        }
     }
 }
 
