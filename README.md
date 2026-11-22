@@ -48,6 +48,6 @@ On Windows, run `program.exe`.
 - Prim and Kruskal are for undirected weighted graphs.
 - Bellman-Ford supports negative edge weights and detects reachable negative cycles.
 - Graph vertices are numbered from 0.
-- BFS source code uses an adjacency matrix representation.
+- BFS and Topological Sort use adjacency-list representations.
 - Topological Sort source code uses a DFS traversal and adjacency list, and reports a cycle if no topological order exists.
 - GitHub Pages displays source code; it does not compile or run C programs in the browser.
