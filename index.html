@@ -1,1 +1,92 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>DSA C Programs</title></head><body><h1>DSA C Programs</h1><p>Complete C programs for DSA lab practice.</p></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Complete, commented C programs for DSA lab practice and exam revision.">
+<title>DSA C Programs — Lab Companion</title>
+<style>
+:root{--ink:#202a27;--muted:#69736d;--paper:#f5f4ee;--card:#fffefa;--line:#e3e3d9;--green:#355d4b;--rust:#b65e42;--gold:#d9bb7b}
+*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif}
+header{background:#203b32;color:#fff;padding:58px max(22px,calc((100% - 1120px)/2)) 48px}
+.eyebrow{text-transform:uppercase;letter-spacing:.17em;font-size:11px;color:var(--gold);font-weight:800}
+h1{font-family:Georgia,serif;font-weight:500;font-size:clamp(40px,6vw,66px);line-height:1.02;margin:15px 0}
+header p{color:#dce5dd;max-width:650px;line-height:1.75;margin:0;font-size:15px}
+.wrap{max-width:1120px;margin:auto;padding:32px 22px 72px}
+.topline{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;margin-bottom:18px}
+.search{width:min(100%,460px);border:1px solid var(--line);border-radius:9px;padding:13px 15px;font:inherit;background:var(--card);color:var(--ink)}
+.count{color:var(--muted);font-size:13px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:15px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:13px;padding:21px;display:flex;flex-direction:column;min-height:218px}
+.num{font-size:11px;letter-spacing:.13em;color:var(--rust);font-weight:800}
+h2{font-family:Georgia,serif;font-weight:500;font-size:24px;margin:11px 0}
+.card p{color:var(--muted);font-size:14px;line-height:1.65;margin:0 0 18px}
+.actions{display:flex;gap:9px;margin-top:auto;flex-wrap:wrap}
+button,a.btn{border:0;border-radius:8px;padding:10px 13px;font:600 13px system-ui;cursor:pointer;text-decoration:none;display:inline-block}
+button.primary,a.btn{background:var(--green);color:white}button.secondary,a.secondary{background:#eeeee6;color:var(--ink)}
+button:focus-visible,a:focus-visible,input:focus-visible{outline:3px solid #d9bb7b;outline-offset:2px}
+.viewer{margin-top:24px;background:#18231f;color:#e8eee9;border-radius:13px;overflow:hidden;display:none}
+.viewer-head{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;padding:14px 17px;border-bottom:1px solid #35423b}
+.viewer-head strong{font-size:14px}.viewer-head button{background:#e6e8df;color:#1d2b25}
+pre{margin:0;padding:20px;overflow:auto;max-height:70vh;font:13px/1.65 ui-monospace,SFMono-Regular,Consolas,monospace;white-space:pre}
+.note{margin-top:25px;padding:17px 19px;border-left:3px solid var(--gold);background:#eeede4;color:#515d55;font-size:13px;line-height:1.7}
+footer{border-top:1px solid var(--line);margin-top:34px;padding-top:20px;color:var(--muted);font-size:13px;line-height:1.8}
+footer a{color:var(--green)}
+[hidden]{display:none!important}
+@media(max-width:520px){header{padding-top:40px}.wrap{padding:25px 15px 55px}.grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header>
+  <div class="eyebrow">DSA · C language · Lab revision</div>
+  <h1>Algorithms, made<br>easier to practise.</h1>
+  <p>A collection of complete, commented C programs for DSA lab questions and exam revision. Browse a topic, open its source code, copy it, or download the file to compile locally.</p>
+</header>
+<main class="wrap">
+  <div class="topline">
+    <input class="search" id="search" type="search" placeholder="Search an algorithm or topic…" aria-label="Search programs">
+    <span class="count" id="count">5 program files</span>
+  </div>
+  <section class="grid" id="cards">
+    <article class="card" data-search="sorting searching merge quick bucket radix bubble insertion linear binary">
+      <div class="num">01 · SORTING & SEARCHING</div><h2>Sorting & Searching</h2>
+      <p>Merge, Quick, Bucket, Radix, Bubble and Insertion Sort, plus Linear and Binary Search.</p>
+      <div class="actions"><button class="primary" data-file="sorting_searching.c">View code</button><a class="btn secondary" href="programs/sorting_searching.c" download>Download C</a></div>
+    </article>
+    <article class="card" data-search="recursion geometric series formula loop nested tower hanoi iterative recursive">
+      <div class="num">02 · RECURSION & SERIES</div><h2>Recursion & Series</h2>
+      <p>Geometric series using formula, single loop and nested loop; Tower of Hanoi in recursive and iterative forms.</p>
+      <div class="actions"><button class="primary" data-file="recursion_and_series.c">View code</button><a class="btn secondary" href="programs/recursion_and_series.c" download>Download C</a></div>
+    </article>
+    <article class="card" data-search="greedy dynamic programming kadane fractional knapsack job scheduling 0/1">
+      <div class="num">03 · GREEDY & DYNAMIC PROGRAMMING</div><h2>Greedy & Dynamic Programming</h2>
+      <p>Kadane’s Algorithm, Fractional Knapsack, Job Scheduling with Deadlines and 0/1 Knapsack.</p>
+      <div class="actions"><button class="primary" data-file="greedy_dynamic_programming.c">View code</button><a class="btn secondary" href="programs/greedy_dynamic_programming.c" download>Download C</a></div>
+    </article>
+    <article class="card" data-search="graph prim kruskal dijkstra bellman ford floyd warshall topological sort connected components directed undirected cycle dfs">
+      <div class="num">04 · GRAPH ALGORITHMS</div><h2>Graph Algorithms</h2>
+      <p>Prim, Kruskal, Dijkstra, Bellman-Ford, Floyd-Warshall, Topological Sort, Connected Components and directed/undirected cycle detection.</p>
+      <div class="actions"><button class="primary" data-file="graph_algorithms.c">View code</button><a class="btn secondary" href="programs/graph_algorithms.c" download>Download C</a></div>
+    </article>
+    <article class="card" data-search="backtracking n queens 4 queens chessboard">
+      <div class="num">05 · BACKTRACKING</div><h2>4-Queens & N-Queens</h2>
+      <p>Backtracking solution that checks columns and diagonals and prints a valid chessboard arrangement.</p>
+      <div class="actions"><button class="primary" data-file="backtracking.c">View code</button><a class="btn secondary" href="programs/backtracking.c" download>Download C</a></div>
+    </article>
+  </section>
+  <section class="viewer" id="viewer" aria-live="polite">
+    <div class="viewer-head"><strong id="filename">Source code</strong><div class="actions"><button class="secondary" id="copy">Copy code</button><button class="secondary" id="close">Close</button></div></div>
+    <pre><code id="source">Select a program to load its source.</code></pre>
+  </section>
+  <div class="note"><strong>Compile the programs locally.</strong> GitHub Pages hosts this website and displays the source code; it does not compile or execute C programs in the browser. Use GCC, Code::Blocks, VS Code or another C compiler. The geometric-series file uses the math library: compile it with <code>gcc programs/recursion_and_series.c -o recursion -lm</code>.</div>
+  <footer>DSA lab companion · <a href="https://github.com/aditigupta-dot/dsa-c-programs">View repository on GitHub</a><br>Check each program’s comments for assumptions and input requirements before running it.</footer>
+</main>
+<script>
+const search=document.getElementById('search'),cards=[...document.querySelectorAll('.card')],count=document.getElementById('count');
+const viewer=document.getElementById('viewer'),source=document.getElementById('source'),filename=document.getElementById('filename');
+search.addEventListener('input',()=>{const q=search.value.toLowerCase();let visible=0;cards.forEach(card=>{const show=(card.dataset.search+' '+card.innerText).toLowerCase().includes(q);card.hidden=!show;if(show)visible++});count.textContent=visible+' of 5 program files'});
+document.querySelectorAll('[data-file]').forEach(button=>button.addEventListener('click',async()=>{const file=button.dataset.file;viewer.style.display='block';filename.textContent=file;source.textContent='Loading source code…';viewer.scrollIntoView({behavior:'smooth',block:'start'});try{const response=await fetch('programs/'+file);if(!response.ok)throw new Error('Could not load source');source.textContent=await response.text()}catch(error){source.textContent='Could not load the file. Open it directly in the repository: https://github.com/aditigupta-dot/dsa-c-programs/tree/main/programs/'+file}}));
+document.getElementById('copy').addEventListener('click',async()=>{try{await navigator.clipboard.writeText(source.textContent);document.getElementById('copy').textContent='Copied!';setTimeout(()=>document.getElementById('copy').textContent='Copy code',1500)}catch(e){document.getElementById('copy').textContent='Select and copy';}});
+document.getElementById('close').addEventListener('click',()=>{viewer.style.display='none'});
+</script>
+</body></html>
